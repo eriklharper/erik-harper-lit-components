@@ -127,7 +127,14 @@ export class LitRadioButton extends LitElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
+    console.log(`${this.name}.${this.value}:${name} from: ${oldValue} to: ${newValue}`);
     switch (name) {
+      default:
+        if (this.input) {
+          this.input.checked = false;
+          this.input.blur();
+        }
+        break;
       case "checked":
         if (this.input) {
           this.input.checked = true;
