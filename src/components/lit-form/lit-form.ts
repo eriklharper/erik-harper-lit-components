@@ -3,9 +3,9 @@ import { html, LitElement, customElement } from 'lit-element';
 @customElement('erik-form')
 export class LitForm extends LitElement {
 
-  // createRenderRoot() {
-  //   return this;
-  // }
+  createRenderRoot() {
+    return this;
+  }
 
   firstUpdated() {
     this.addEventListener("submit", this.onFormSubmit);
@@ -16,8 +16,6 @@ export class LitForm extends LitElement {
     event.preventDefault();
     const form = this.querySelector("form");
     new FormData(form);
-    console.log("onFormSubmit", form);
-
   }
 
   onFormData(event: any) {
@@ -25,17 +23,6 @@ export class LitForm extends LitElement {
     for (var pair of event.formData.entries()) {
       data[pair[0]] = pair[1];
     }
-    console.log("onFormData", data);
     alert(JSON.stringify(data, null, 2))
   }
-
-
-  render() {
-    return html`
-      <form>
-        <slot></slot>
-      </form>
-    `;
-  }
-
 }
