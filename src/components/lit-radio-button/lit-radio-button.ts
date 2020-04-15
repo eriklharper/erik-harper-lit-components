@@ -7,14 +7,15 @@ const styles = css`
   cursor: pointer;
 }
 #radio {
-  display: inline-block;
   border-radius: 100%;
   box-shadow: inset 0 0 0 1px var(--radio-default);
   cursor: pointer;
   margin-right: 7px;
+  flex: 1 1 12px;
 }
 label {
   cursor: pointer;
+  flex: 1 1 auto;
 }
 
 :host(:hover) #radio {
@@ -27,7 +28,8 @@ label {
 /* Extra Small */
 :host([scale=xsmall]) #radio {
   height: 12px;
-  width: 12px;
+  min-width: 12px;
+  max-width: 12px;
 }
 :host([scale=xsmall][checked]) #radio,
 :host(:hover[scale=xsmall][checked][disabled]) #radio {
@@ -44,7 +46,8 @@ label {
 /* Small (Default) */
 :host([scale=small]) #radio {
   height: 14px;
-  width: 14px;
+  min-width: 14px;
+  max-width: 14px;
 }
 :host([scale=small][checked]) #radio,
 :host(:hover[scale=small][checked][disabled]) #radio {
@@ -61,7 +64,8 @@ label {
 /* Medium */
 :host([scale=medium]) #radio {
   height: 16px;
-  width: 16px;
+  min-width: 16px;
+  max-width: 16px;
 }
 :host([scale=medium][checked]) #radio,
 :host(:hover[scale=medium][checked][disabled]) #radio {
@@ -78,7 +82,8 @@ label {
 /* Large */
 :host([scale=large]) #radio {
   height: 18px;
-  width: 18px;
+  min-width: 18px;
+  max-width: 18px;
 }
 :host([scale=large][checked]) #radio,
 :host(:hover[scale=large][checked][disabled]) #radio {
